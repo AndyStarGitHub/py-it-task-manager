@@ -63,23 +63,6 @@ class Task(models.Model):
         return self.name
 
 
-class Project(models.Model):
-
-    name = models.CharField(max_length=63, unique=True)
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    deadline = models.DateTimeField(null=True, blank=True)
-    is_completed = models.BooleanField(default=False)
-    tasks = models.ManyToManyField(Worker, related_name="task_projects")
-    teams = models.ManyToManyField(Worker, related_name="team_projects")
-
-    class Meta:
-        ordering = ["-is_completed", "deadline"]
-
-    def __str__(self) -> str:
-        return self.name
-
-
 class Team(models.Model):
 
     name = models.CharField(max_length=63, unique=True)
@@ -93,3 +76,20 @@ class Team(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+class Project(models.Model):
+
+    name = models.CharField(max_length=63, unique=True)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    deadline = models.DateTimeField(null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    tasks = models.ManyToManyField(Task, related_name="task_projects")
+    teams = models.ManyToManyField(Team, related_name="team_projects")
+
+    class Meta:
+        ordering = ["is_completed", "deadline"]
+
+    def __str__(self) -> str:
+        return self.name
+
