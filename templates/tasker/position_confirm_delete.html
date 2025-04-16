@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1 >{{ project.name }}: delete project?</h1>
+  <h1> {{ position.name }}: delete position?</h1>
   <form action="" method="post">
     {% csrf_token %}
+
     <input type="submit" value="Yes" class="btn btn-danger">
+    <a href="{% url "tasker:position-list" %}" class="btn btn-secondary">Cancel</a>
   </form>
 {% endblock %}

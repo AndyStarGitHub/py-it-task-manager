@@ -3,8 +3,8 @@
 
 {% block content %}
   <h1>
-    Projects
-    <a style="float: right" href="{% url 'tasker:project-create' %}" class="btn btn-primary link-to-page">
+    Tasks
+    <a style="float: right" href="{% url 'tasker:task-create' %}" class="btn btn-primary link-to-page">
       Add
     </a>
   </h1>
@@ -12,7 +12,7 @@
     {{ search_form|crispy }}
     <input class="btn btn-secondary" type="submit" value="🔍" >
   </form>
-  {% if project_list %}
+  {% if task_list %}
     <table class="table">
       <tr>
         <th>Name</th>
@@ -22,35 +22,35 @@
         <th>Status</th>
       </tr>
 
-      {% for project in project_list %}
+      {% for task in task_list %}
         <tr>
           <td>
-            {{ project.name }}
+            {{ task.name }}
           </td>
           <td>
-            {{ project.deadline }}
+            {{ task.deadline }}
           </td>
           <td>
             <a class="btn btn-secondary"
-              href="{% url 'tasker:project-update' pk=project.id %}">
+              href="{% url 'tasker:task-update' pk=task.id %}">
               Update
             </a>
           </td>
           <td>
             <a class="btn btn-secondary"
-              href="{% url 'tasker:project-delete' pk=project.id %}">
+              href="{% url 'tasker:task-delete' pk=task.id %}">
               Delete
             </a>
           </td>
           <td>
-            {% if project.is_completed %}
+            {% if task.is_completed %}
               <label style="color:Green;"><strong>Completed</strong></label>
-              <a style="float: right" href="{% url 'tasker:project-toggle-done' pk=project.id %}" class="btn btn-secondary link-to-page">
+              <a style="float: right" href="{% url 'tasker:task-toggle-done' pk=task.id %}" class="btn btn-secondary link-to-page">
                 Make uncompleted again
               </a>
             {% else %}
               <label style="color:Red;"><strong>Not completed</strong></label>
-              <a style="float: right" href="{% url 'tasker:project-toggle-done' pk=project.id %}" class="btn btn-success link-to-page">
+              <a style="float: right" href="{% url 'tasker:task-toggle-done' pk=task.id %}" class="btn btn-success link-to-page">
                 Complete
               </a>
             {% endif %}
@@ -59,6 +59,6 @@
       {% endfor %}
     </table>
   {% else %}
-    <p>There are no projects yet</p>
+    <p>There are no tasks yet</p>
   {% endif %}
 {% endblock %}
