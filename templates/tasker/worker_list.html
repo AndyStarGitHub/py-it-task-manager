@@ -20,6 +20,7 @@
         <th>First name</th>
         <th>Last name</th>
         <th>Position</th>
+        <th>Teams</th>
       </tr>
     {% for worker in worker_list %}
       <tr>
@@ -28,6 +29,11 @@
         <td>{{ worker.first_name }}</td>
         <td>{{ worker.last_name }}</td>
         <td>{{ worker.position }}</td>
+        <td>
+          {% for team in worker.teams.all %}
+            {{ team.name }} /
+          {% endfor %}
+        </td>
       </tr>
     {% endfor %}
 

@@ -45,7 +45,7 @@ class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
 class PositionListView(LoginRequiredMixin, generic.ListView):
     model = Position
     paginate_by = 3
-    # queryset = Position.objects.select_related("workers")
+    queryset = Position.objects.all().select_related("workers")
 
     def get_context_data(self, **kwargs):
         context = super(PositionListView, self).get_context_data(**kwargs)
@@ -90,6 +90,7 @@ class WorkerCreateView(LoginRequiredMixin, generic.CreateView):
 class WorkerListView(LoginRequiredMixin, generic.ListView):
     model = Worker
     paginate_by = 5
+    queryset = Worker.objects.all().prefetch_related("teams")
 
     def get_context_data(self, **kwargs):
         context = super(WorkerListView, self).get_context_data(**kwargs)
@@ -132,6 +133,7 @@ class TaskTypeCreateView(LoginRequiredMixin, generic.CreateView):
 class TaskTypeListView(LoginRequiredMixin, generic.ListView):
     model = TaskType
     paginate_by = 3
+    queryset = TaskType.objects.all().prefetch_related("tasks")
 
     def get_context_data(self, **kwargs):
         context = super(TaskTypeListView, self).get_context_data(**kwargs)
@@ -170,6 +172,7 @@ class TaskCreateView(LoginRequiredMixin, generic.CreateView):
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 3
+    queryset = Task.objects.all().prefetch_related("workers")
 
     def get_context_data(self, **kwargs):
         context = super(TaskListView, self).get_context_data(**kwargs)

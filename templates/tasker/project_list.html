@@ -17,6 +17,7 @@
       <tr>
         <th>Name</th>
         <th>Deadline</th>
+        <th>Teams</th>
         <th>Update</th>
         <th>Delete</th>
         <th>Status</th>
@@ -29,6 +30,11 @@
           </td>
           <td>
             {{ project.deadline }}
+          </td>
+          <td>
+            {% for team in project.teams.all %}
+              {{ team.name }} /
+            {% endfor %}
           </td>
           <td>
             <a class="btn btn-secondary"

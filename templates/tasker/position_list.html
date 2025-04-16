@@ -16,6 +16,7 @@
     <table class="table">
       <tr>
         <th>Name</th>
+        <th>Workers</th>
         <th>Update</th>
         <th>Delete</th>
       </tr>
@@ -24,6 +25,11 @@
         <tr>
           <td>
               {{ position.name }}
+          </td>
+          <td>
+            {% for worker in position.workers.all %}
+              {{ worker.username }} /
+            {% endfor %}
           </td>
           <td>
               <a class="btn btn-secondary"

@@ -17,6 +17,7 @@
       <tr>
         <th>Name</th>
         <th>Deadline</th>
+        <th>Workers</th>
         <th>Update</th>
         <th>Delete</th>
         <th>Status</th>
@@ -29,6 +30,11 @@
           </td>
           <td>
             {{ task.deadline }}
+          </td>
+          <td>
+            {% for worker in task.workers.all %}
+              {{ worker.username }} /
+            {% endfor %}
           </td>
           <td>
             <a class="btn btn-secondary"

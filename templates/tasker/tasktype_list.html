@@ -16,6 +16,7 @@
     <table class="table">
       <tr>
         <th>Name</th>
+        <th>Tasks</th>
         <th>Update</th>
         <th>Delete</th>
       </tr>
@@ -24,6 +25,11 @@
         <tr>
           <td>
               {{ tasktype.name }}
+          </td>
+          <td>
+            {% for task in tasktype.tasks.all %}
+              {{ task.name }} /
+            {% endfor %}
           </td>
           <td>
               <a class="btn btn-secondary"
