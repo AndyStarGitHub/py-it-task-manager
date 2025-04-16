@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from tasker.models import Position, TaskType, Worker, Task
+from tasker.models import Position, TaskType, Worker, Task, Team
 
 
 @admin.register(Position)
@@ -46,20 +46,9 @@ class WorkerAdmin(UserAdmin):
 class TaskAdmin(admin.ModelAdmin):
     ordering = ("is_completed", "-created_at",)
 
-    fieldsets = (
-        (("Additional info", {"fields": ("created_at", "is_completed",)}),)
-    )
-    add_fieldsets = (
-        (
-            (
-                "Additional info",
-                {
-                    "fields": (
-                        "created_at",
-                        "is_completed",
-                    )
-                },
-            ),
-        )
-    )
-
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    ordering = ("-is_active", "name",)
+    list_display = ["name"]
+    search_fields = ["name"]
+    list_filter = ["name"]

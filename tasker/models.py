@@ -61,3 +61,17 @@ class Task(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+    
+class Team(models.Model):
+
+    name = models.CharField(max_length=63, unique=True)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    workers = models.ManyToManyField(Worker, related_name="teams")
+    is_active = models.BooleanField(default=False)
+    class Meta:
+        ordering = ["-is_active", "name"]
+
+    def __str__(self) -> str:
+        return self.name
