@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from tasker.models import Position, TaskType, Worker, Task, Team
+from tasker.models import Position, TaskType, Worker, Task, Team, Project
 
 
 @admin.register(Position)
@@ -42,9 +42,15 @@ class WorkerAdmin(UserAdmin):
     )
 
 
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    ordering = ("is_completed", "deadline",)
+
+
 @admin.register(Task)
 class TaskAdmin(admin.ModelAdmin):
-    ordering = ("is_completed", "-created_at",)
+    ordering = ("is_completed", "deadline",)
+
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):

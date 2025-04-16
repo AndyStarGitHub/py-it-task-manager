@@ -57,19 +57,37 @@ class Task(models.Model):
     workers = models.ManyToManyField(Worker, related_name="tasks")
 
     class Meta:
-        ordering = ["is_completed", "-created_at"]
+        ordering = ["is_completed", "deadline"]
 
     def __str__(self) -> str:
         return self.name
-    
-    
+
+
+class Project(models.Model):
+
+    name = models.CharField(max_length=63, unique=True)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    deadline = models.DateTimeField(null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    tasks = models.ManyToManyField(Worker, related_name="task_projects")
+    teams = models.ManyToManyField(Worker, related_name="team_projects")
+
+    class Meta:
+        ordering = ["-is_completed", "deadline"]
+
+    def __str__(self) -> str:
+        return self.name
+
+
 class Team(models.Model):
 
     name = models.CharField(max_length=63, unique=True)
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     workers = models.ManyToManyField(Worker, related_name="teams")
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+
     class Meta:
         ordering = ["-is_active", "name"]
 
