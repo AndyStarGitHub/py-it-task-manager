@@ -24,7 +24,6 @@ from tasker.forms import (PositionForm,
 from tasker.models import Worker, TaskType, Task, Position, Team, Project
 
 
-# Create your views here.
 @login_required
 def index(request):
     """View function for the home page of the site."""
