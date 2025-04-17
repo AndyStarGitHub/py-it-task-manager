@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 from .models import Worker, TaskType
 from .views import (
@@ -31,6 +31,7 @@ from .views import (
     WorkerDetailView,
     WorkerListView,
     WorkerPositionUpdateView,
+    user_logout,
 )
 urlpatterns = [
     path("", index, name="index"),
@@ -64,6 +65,8 @@ urlpatterns = [
     path("teams/<int:pk>/delete/", TeamDeleteView.as_view(), name="team-delete"),
     path("teams/<int:pk>/update/", TeamUpdateView.as_view(), name="team-update"),
     path("teams/<int:pk>/toggle/", team_toggle_done, name="team-toggle-done"),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path('logout/', user_logout, name='logout_user'),
 
 ]
 

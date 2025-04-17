@@ -15,8 +15,8 @@ class Position(models.Model):
 
 class Worker(AbstractUser):
 
-    position = models.ForeignKey(Position, on_delete=models.PROTECT, related_name="workers")
-    # REQUIRED_FIELDS = ['position']
+    position = models.ForeignKey(Position, on_delete=models.PROTECT, related_name="workers", null=True)
+    REQUIRED_FIELDS = ['position']
     class Meta:
         verbose_name = "worker"
         verbose_name_plural = "workers"

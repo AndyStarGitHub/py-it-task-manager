@@ -2,7 +2,7 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>{{ object|yesno:"Update position for the,Create" }} worker</h1>
+  <h1>{{ worker.username }} {{ object|yesno:"Update position for the,Create" }} worker</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
