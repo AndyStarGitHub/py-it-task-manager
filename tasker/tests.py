@@ -61,9 +61,6 @@ class ModelTests(TestCase):
         f_str = f"{position.name}"
         self.assertEqual(str(position), f_str)
 
-
-
-
     def test_worker_str_and_position(self):
         position = Position.objects.create(
             name="test position",
@@ -81,13 +78,11 @@ class ModelTests(TestCase):
             f_str)
         self.assertEqual(worker.position.name, "test position")
 
-
-
-
     def test_task_str(self):
-        task = Task.objects.create(name="test task", description="test_description")
+        task = Task.objects.create(name="test task",
+                                   description="test_description"
+                                   )
         self.assertEqual(str(task), "test task")
-
 
     def test_tasktype_str(self):
         tasktype = TaskType.objects.create(name="test task type")
@@ -178,5 +173,3 @@ class PrivateWorkerTests(TestCase):
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
         self.assertEqual(new_user.position, form_data["position"])
-
-

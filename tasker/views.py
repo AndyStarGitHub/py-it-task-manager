@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,10 +7,20 @@ from django.urls import reverse_lazy
 from django.views import generic
 from pyexpat import model
 
-from tasker.forms import (PositionForm, PositionSearchForm, WorkerCreationForm,
-                          WorkerSearchForm, WorkerUpdateForm,
-                          TaskTypeForm, TaskTypeSearchForm, TaskForm, TaskSearchForm, WorkerPositionUpdateForm,
-                          TeamForm, TeamSearchForm, ProjectForm, ProjectSearchForm)
+from tasker.forms import (PositionForm,
+                          PositionSearchForm,
+                          WorkerCreationForm,
+                          WorkerSearchForm,
+                          WorkerUpdateForm,
+                          TaskTypeForm,
+                          TaskTypeSearchForm,
+                          TaskForm,
+                          TaskSearchForm,
+                          WorkerPositionUpdateForm,
+                          TeamForm,
+                          TeamSearchForm,
+                          ProjectForm,
+                          ProjectSearchForm)
 from tasker.models import Worker, TaskType, Task, Position, Team, Project
 
 
@@ -122,7 +131,6 @@ class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("tasker:worker-list")
 
 
-
 class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Worker
     # form_class = WorkerUpdateForm
@@ -209,9 +217,9 @@ class TaskDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 
 class WorkerPositionUpdateView(LoginRequiredMixin, generic.UpdateView):
-        model = Worker
-        form_class = WorkerPositionUpdateForm
-        success_url = reverse_lazy("tasker:worker-list")
+    model = Worker
+    form_class = WorkerPositionUpdateForm
+    success_url = reverse_lazy("tasker:worker-list")
 
 
 class TeamCreateView(LoginRequiredMixin, generic.CreateView):

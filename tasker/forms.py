@@ -1,6 +1,5 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.forms.widgets import DateInput
 
 from tasker.models import Position, Worker, TaskType, Task, Team, Project
 
@@ -60,7 +59,7 @@ class WorkerSearchForm(forms.Form):
         required=False,
         label="",
         widget=forms.TextInput(
-        attrs={"placeholder": "Search worker by username"}
+            attrs={"placeholder": "Search worker by username"}
         )
     )
 
@@ -79,15 +78,14 @@ class TaskTypeSearchForm(forms.Form):
 class TaskForm(forms.ModelForm):
     deadline = forms.DateField(
         widget=forms.DateInput(format="%Y-%m-%d",
-                               attrs={'type': 'date',}),
+                               attrs={'type': 'date', }),
         help_text='Select a date',
         input_formats=["%Y-%m-%d"],
-
     )
+
     class Meta:
         model = Task
         fields = "__all__"
-
 
 
 class TaskSearchForm(forms.Form):
@@ -121,10 +119,11 @@ class TeamSearchForm(forms.Form):
 class ProjectForm(forms.ModelForm):
     deadline = forms.DateField(
         widget=forms.DateInput(format="%Y-%m-%d",
-                               attrs={'type': 'date',}),
+                               attrs={'type': 'date', }),
         help_text='Select a date',
         input_formats=["%Y-%m-%d"],
     )
+
     class Meta:
         model = Project
         fields = "__all__"

@@ -15,8 +15,13 @@ class Position(models.Model):
 
 class Worker(AbstractUser):
 
-    position = models.ForeignKey(Position, on_delete=models.PROTECT, related_name="workers", null=True)
+    position = models.ForeignKey(Position,
+                                 on_delete=models.PROTECT,
+                                 related_name="workers",
+                                 null=True
+                                 )
     REQUIRED_FIELDS = ['position']
+
     class Meta:
         verbose_name = "worker"
         verbose_name_plural = "workers"
@@ -52,7 +57,10 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
-    priority = models.CharField(choices=PRIORIY_CHOICES.items(), max_length=6, default="Low")
+    priority = models.CharField(choices=PRIORIY_CHOICES.items(),
+                                max_length=6,
+                                default="Low"
+                                )
     task_types = models.ManyToManyField(TaskType, related_name="tasks")
     workers = models.ManyToManyField(Worker, related_name="tasks")
 
@@ -77,6 +85,7 @@ class Team(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Project(models.Model):
 
     name = models.CharField(max_length=63, unique=True)
@@ -92,4 +101,3 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
