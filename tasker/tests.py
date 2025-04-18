@@ -4,18 +4,20 @@ from django.urls import reverse
 
 from tasker.models import Position, Project, TaskType, Task, Team
 
+User = get_user_model()
+
 
 class AdminSiteTests(TestCase):
     def setUp(self) -> None:
-        position = Position.objects.create(name="test_position")
+        position = Position.objects.create(name="test_position_21")
         self.client = Client()
-        self.admin_user = get_user_model().objects.create_superuser(
-            username="admin",
+        self.admin_user = User.objects.create_superuser(
+            username="admin_21",
             password="tester",
             position=position,
         )
         self.client.force_login(self.admin_user)
-        self.worker = get_user_model().objects.create_user(
+        self.worker = User.objects.create_user(
             username="wrk",
             password="worker",
             position=position,
@@ -65,7 +67,7 @@ class ModelTests(TestCase):
         position = Position.objects.create(
             name="test position",
             )
-        worker = get_user_model().objects.create(
+        worker = User.objects.create(
             username="testusername",
             password="pass",
             first_name="test_first_name",
@@ -125,7 +127,7 @@ class PublicLoginRequiredTests(TestCase):
 class PrivateTaskTypesTests(TestCase):
     def setUp(self) -> None:
         position = Position.objects.create(name="test_position")
-        self.user = get_user_model().objects.create_user(
+        self.user = User.objects.create_user(
             username="testuser",
             password="<PASSWsORD>",
             position=position,
@@ -149,7 +151,7 @@ class PrivateTaskTypesTests(TestCase):
 class PrivateWorkerTests(TestCase):
     def setUp(self) -> None:
         self.position = Position.objects.create(name="test_position")
-        self.user = get_user_model().objects.create_user(
+        self.user = User.objects.create_user(
             username="<NAME>",
             password="<PASSWORD>",
             first_name="test",
@@ -168,7 +170,7 @@ class PrivateWorkerTests(TestCase):
             "position": self.position,
         }
         self.client.post(reverse("tasker:worker-create"), data=form_data)
-        new_user = get_user_model().objects.get(username=form_data["username"])
+        new_user = User.objects.get(username=form_data["username"])
 
         self.assertEqual(new_user.first_name, form_data["first_name"])
         self.assertEqual(new_user.last_name, form_data["last_name"])
