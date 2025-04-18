@@ -1,4 +1,3 @@
-from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
@@ -7,20 +6,8 @@ from django.urls import reverse_lazy
 from django.views import generic
 from pyexpat import model
 
-from tasker.forms import (PositionForm,
-                          PositionSearchForm,
-                          WorkerCreationForm,
-                          WorkerSearchForm,
-                          WorkerUpdateForm,
-                          TaskTypeForm,
-                          TaskTypeSearchForm,
-                          TaskForm,
-                          TaskSearchForm,
-                          WorkerPositionUpdateForm,
-                          TeamForm,
-                          TeamSearchForm,
-                          ProjectForm,
-                          ProjectSearchForm)
+from tasker.forms import *
+
 from tasker.models import Worker, TaskType, Task, Position, Team, Project
 
 
@@ -53,7 +40,6 @@ def index(request):
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Worker
-    # queryset = Driver.objects.all().prefetch_related("cars__manufacturer")
 
 
 class PositionListView(LoginRequiredMixin, generic.ListView):
@@ -104,7 +90,7 @@ class WorkerCreateView(LoginRequiredMixin, generic.CreateView):
 class WorkerListView(LoginRequiredMixin, generic.ListView):
     model = Worker
     paginate_by = 5
-    queryset = Worker.objects.all().prefetch_related("teams")
+    queryset = Worker.objects.prefetch_related("teams")
 
     def get_context_data(self, **kwargs):
         context = super(WorkerListView, self).get_context_data(**kwargs)
@@ -146,7 +132,7 @@ class TaskTypeCreateView(LoginRequiredMixin, generic.CreateView):
 class TaskTypeListView(LoginRequiredMixin, generic.ListView):
     model = TaskType
     paginate_by = 3
-    queryset = TaskType.objects.all().prefetch_related("tasks")
+    queryset = TaskType.objects.prefetch_related("tasks")
 
     def get_context_data(self, **kwargs):
         context = super(TaskTypeListView, self).get_context_data(**kwargs)
@@ -185,7 +171,7 @@ class TaskCreateView(LoginRequiredMixin, generic.CreateView):
 class TaskListView(LoginRequiredMixin, generic.ListView):
     model = Task
     paginate_by = 3
-    queryset = Task.objects.all().prefetch_related("workers")
+    queryset = Task.objects.prefetch_related("workers")
 
     def get_context_data(self, **kwargs):
         context = super(TaskListView, self).get_context_data(**kwargs)
@@ -318,8 +304,3 @@ def projects_toggle_done(request, pk):
     return HttpResponseRedirect(reverse_lazy("tasker:project-list"))
 
 
-def user_logout(request):
-    if request.method == 'POST':
-        if request.user.is_authenticated:
-            logout(request)
-    return redirect('/accounts/logged_out.html')

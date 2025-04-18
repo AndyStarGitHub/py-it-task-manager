@@ -1,37 +1,8 @@
 from django.urls import path, include
 
-from .views import (
-    index,
-    PositionCreateView,
-    PositionDeleteView,
-    PositionListView,
-    PositionUpdateView,
-    ProjectCreateView,
-    ProjectDeleteView,
-    ProjectListView,
-    ProjectUpdateView,
-    projects_toggle_done,
-    TaskCreateView,
-    TaskDeleteView,
-    TaskListView,
-    TaskUpdateView,
-    TaskTypeCreateView,
-    TaskTypeDeleteView,
-    TaskTypeListView,
-    TaskTypeUpdateView,
-    task_toggle_done,
-    TeamCreateView,
-    TeamDeleteView,
-    TeamListView,
-    TeamUpdateView,
-    team_toggle_done,
-    WorkerCreateView,
-    WorkerDeleteView,
-    WorkerDetailView,
-    WorkerListView,
-    WorkerPositionUpdateView,
-    user_logout,
-)
+from .logging import user_logout
+from .views import *
+
 urlpatterns = [
     path("", index, name="index"),
     path("workers/create/",
