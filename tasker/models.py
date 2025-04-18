@@ -45,11 +45,10 @@ class TaskType(models.Model):
 
 
 class Task(models.Model):
-    PRIORIY_CHOICES = {
-        "Urgent": "Urgent",
-        "High": "High",
-        "Low": "Low",
-    }
+    class PriorityChoices(models.TextChoices):
+        URGENT = "Urgent"
+        HIGH = "High"
+        LOW = "Low"
 
     name = models.CharField(max_length=63, unique=True)
     description = models.TextField()
@@ -57,9 +56,9 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
-    priority = models.CharField(choices=PRIORIY_CHOICES.items(),
+    priority = models.CharField(choices=PriorityChoices,
                                 max_length=6,
-                                default="Low"
+                                default=PriorityChoices.LOW
                                 )
     task_types = models.ManyToManyField(TaskType, related_name="tasks")
     workers = models.ManyToManyField(Worker, related_name="tasks")
