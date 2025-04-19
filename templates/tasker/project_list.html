@@ -21,6 +21,7 @@
         <th>Update</th>
         <th>Delete</th>
         <th>Status</th>
+        <th>Toggle status</th>
       </tr>
 
       {% for project in project_list %}
@@ -51,15 +52,19 @@
           <td>
             {% if project.is_completed %}
               <label style="color:Green;"><strong>Completed</strong></label>
-              <a style="float: right" href="{% url 'tasker:project-toggle-done' pk=project.id %}" class="btn btn-secondary link-to-page">
-                Make uncompleted again
-              </a>
             {% else %}
               <label style="color:Red;"><strong>Not completed</strong></label>
-              <a style="float: right" href="{% url 'tasker:project-toggle-done' pk=project.id %}" class="btn btn-success link-to-page">
-                Complete
-              </a>
             {% endif %}
+          </td>
+        <td>
+            <form method="post" action="{% url 'tasker:project-toggle-done' project.id %}">
+		          {% csrf_token %}
+		          {% if project.is_completed %}
+		            <button type="submit" class="btn btn-secondary btn-sm">Uncomplete</button>
+		          {% else %}
+		            <button type="submit" class="btn btn-success btn-sm">Complete</button>
+		          {% endif %}
+            </form>
           </td>
         </tr>
       {% endfor %}

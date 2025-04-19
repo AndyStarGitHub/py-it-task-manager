@@ -20,6 +20,7 @@
         <th>Update</th>
         <th>Delete</th>
         <th>Status</th>
+        <th>Toggle status</th>
       </tr>
 
       {% for team in team_list %}
@@ -47,15 +48,19 @@
           <td>
             {% if team.is_active %}
               <label style="color:Green;"><strong>Active</strong></label>
-              <a style="float: right" href="{% url 'tasker:team-toggle-done' pk=team.id %}" class="btn btn-secondary link-to-page">
-                Make inactive
-              </a>
-            {% else %}
+              {% else %}
               <label style="color:Red;"><strong>Not active</strong></label>
-              <a style="float: right" href="{% url 'tasker:team-toggle-done' pk=team.id %}" class="btn btn-success link-to-page">
-                Make active
-              </a>
             {% endif %}
+          </td>
+          <td>
+            <form method="post" action="{% url 'tasker:team-toggle-done' team.id %}">
+		          {% csrf_token %}
+		          {% if team.is_active %}
+		            <button type="submit" class="btn btn-secondary btn-sm">Make inactive</button>
+		          {% else %}
+		            <button type="submit" class="btn btn-success btn-sm">Make active</button>
+		          {% endif %}
+            </form>
           </td>
         </tr>
       {% endfor %}

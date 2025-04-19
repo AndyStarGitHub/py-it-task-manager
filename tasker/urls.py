@@ -3,6 +3,7 @@ from django.urls import path, include
 from .logging import user_logout
 from .views import *
 
+
 urlpatterns = [
     path("", index, name="index"),
     path("workers/create/",
@@ -58,10 +59,10 @@ urlpatterns = [
          ProjectUpdateView.as_view(),
          name="project-update"
          ),
-    path("projects/<int:pk>/toggle/",
-         projects_toggle_done,
-         name="project-toggle-done"
-         ),
+    path("projects/<int:pk>/toggle_done/",
+		ProjectToggleDoneView.as_view(),
+		name="project-toggle-done"
+		),
     path("tasks/create/",
          TaskCreateView.as_view(),
          name="task-create"
@@ -78,10 +79,10 @@ urlpatterns = [
          TaskUpdateView.as_view(),
          name="task-update"
          ),
-    path("tasks/<int:pk>/toggle/",
-         task_toggle_done,
-         name="task-toggle-done"
-         ),
+    path("tasks/<int:pk>/toggle_done/",
+		TaskToggleDoneView.as_view(),
+		name="task-toggle-done"
+		),
     path("tasktypes/create/",
          TaskTypeCreateView.as_view(),
          name="tasktype-create"
@@ -114,10 +115,10 @@ urlpatterns = [
          TeamUpdateView.as_view(),
          name="team-update"
          ),
-    path("teams/<int:pk>/toggle/",
-         team_toggle_done,
-         name="team-toggle-done"
-         ),
+    path("teams/<int:pk>/toggle_done/",
+		TeamToggleDoneView.as_view(),
+		name="team-toggle-done"
+		),
     path("accounts/", include("django.contrib.auth.urls")),
     path('logout/', user_logout, name='logout_user'),
 

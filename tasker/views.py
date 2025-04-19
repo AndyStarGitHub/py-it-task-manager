@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect, HttpRequest, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import generic
+from django.views import generic, View
 from pyexpat import model
 
 from tasker.forms import *
@@ -118,7 +118,6 @@ class WorkerDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Worker
-    # form_class = WorkerUpdateForm
     form_class = WorkerUpdateForm
     success_url = reverse_lazy("tasker:worker-list")
 
@@ -213,13 +212,6 @@ class TeamCreateView(LoginRequiredMixin, generic.CreateView):
     success_url = reverse_lazy("tasker:team-list")
 
 
-def task_toggle_done(request, pk):
-    task = Task.objects.get(id=pk)
-    task.is_completed = not task.is_completed
-    task.save()
-    return HttpResponseRedirect(reverse_lazy("tasker:task-list"))
-
-
 class TeamListView(LoginRequiredMixin, generic.ListView):
     model = Team
     paginate_by = 3
@@ -250,13 +242,6 @@ class TeamUpdateView(LoginRequiredMixin, generic.UpdateView):
 class TeamDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Team
     success_url = reverse_lazy("tasker:team-list")
-
-
-def team_toggle_done(request, pk):
-    team = Team.objects.get(id=pk)
-    team.is_active = not team.is_active
-    team.save()
-    return HttpResponseRedirect(reverse_lazy("tasker:team-list"))
 
 
 class ProjectCreateView(LoginRequiredMixin, generic.CreateView):
@@ -304,3 +289,31 @@ def projects_toggle_done(request, pk):
     return HttpResponseRedirect(reverse_lazy("tasker:project-list"))
 
 
+class TaskToggleDoneView(LoginRequiredMixin, View):
+
+    def post(self, request: HttpRequest, pk: int) -> HttpResponse:
+        task = get_object_or_404(Task, pk=pk)
+        task.is_completed = not task.is_completed
+        task.save()
+        success_url = reverse_lazy("tasker:task-list")
+        return redirect(success_url)
+
+
+class TeamToggleDoneView(LoginRequiredMixin, View):
+
+    def post(self, request: HttpRequest, pk: int) -> HttpResponse:
+        team = get_object_or_404(Team, pk=pk)
+        team.is_active = not team.is_active
+        team.save()
+        success_url = reverse_lazy("tasker:team-list")
+        return redirect(success_url)
+
+
+class ProjectToggleDoneView(LoginRequiredMixin, View):
+
+    def post(self, request: HttpRequest, pk: int) -> HttpResponse:
+        project = get_object_or_404(Project, pk=pk)
+        project.is_completed = not project.is_completed
+        project.save()
+        success_url = reverse_lazy("tasker:project-list")
+        return redirect(success_url)
