@@ -60,9 +60,9 @@ urlpatterns = [
          name="project-update"
          ),
     path("projects/<int:pk>/toggle_done/",
-		ProjectToggleDoneView.as_view(),
-		name="project-toggle-done"
-		),
+         ProjectToggleDoneView.as_view(),
+         name="project-toggle-done"
+         ),
     path("tasks/create/",
          TaskCreateView.as_view(),
          name="task-create"
@@ -80,9 +80,9 @@ urlpatterns = [
          name="task-update"
          ),
     path("tasks/<int:pk>/toggle_done/",
-		TaskToggleDoneView.as_view(),
-		name="task-toggle-done"
-		),
+         TaskToggleDoneView.as_view(),
+         name="task-toggle-done"
+         ),
     path("tasktypes/create/",
          TaskTypeCreateView.as_view(),
          name="tasktype-create"
@@ -116,9 +116,9 @@ urlpatterns = [
          name="team-update"
          ),
     path("teams/<int:pk>/toggle_done/",
-		TeamToggleDoneView.as_view(),
-		name="team-toggle-done"
-		),
+         TeamToggleDoneView.as_view(),
+         name="team-toggle-done"
+         ),
     path("accounts/", include("django.contrib.auth.urls")),
     path('logout/', user_logout, name='logout_user'),
 
