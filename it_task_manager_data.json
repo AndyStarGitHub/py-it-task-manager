@@ -1,0 +1,1041 @@
+[
+{
+    "model": "tasker.position",
+    "pk": 1,
+    "fields": {
+        "name": "admin"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 2,
+    "fields": {
+        "name": "administrator"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 3,
+    "fields": {
+        "name": "junior developer"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 4,
+    "fields": {
+        "name": "middle developer"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 5,
+    "fields": {
+        "name": "senior developer"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 6,
+    "fields": {
+        "name": "Tech writer"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 7,
+    "fields": {
+        "name": "Tech reader"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 8,
+    "fields": {
+        "name": "Vocal"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 9,
+    "fields": {
+        "name": "Guitar"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 10,
+    "fields": {
+        "name": "Bass guitar"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 11,
+    "fields": {
+        "name": "Drummer"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 13,
+    "fields": {
+        "name": "Keyboard"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 14,
+    "fields": {
+        "name": "Tech musician"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 16,
+    "fields": {
+        "name": "Violinist"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 17,
+    "fields": {
+        "name": "Fluetist"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 18,
+    "fields": {
+        "name": "Teck lead"
+    }
+},
+{
+    "model": "tasker.position",
+    "pk": 19,
+    "fields": {
+        "name": "Saxophonist"
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$y0qORLmNKuOTJZDk6NF3l4$6u0edpDFRQMQD7EzDqX2Fd3r6JE2fuH5JHNQplymQ+w=",
+        "last_login": "2025-04-19T19:06:36.596Z",
+        "is_superuser": true,
+        "username": "pc",
+        "first_name": "",
+        "last_name": "",
+        "email": "pc@pc.pc",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:14:40Z",
+        "position": 19,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$tXwhPBzx4hXgTKXz4mju1T$SrJX/58K3f1XPqrjGxGTuPCwNRpOWCW/zg/Hmr50aEY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "plaro",
+        "first_name": "Robert",
+        "last_name": "Plant",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:18:39.883Z",
+        "position": 7,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$EK6kMMSgQzlB2OHGnurQBr$Zx2+YLzjfv6b0Ba5/8/vdxsQuKa405KFk3IYBo4UPt0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "pagji",
+        "first_name": "Jimmy",
+        "last_name": "Page",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:21:25.605Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$T6T6zcLo1YHTcSU1C7f1kV$ZQ2Q4sfn8xue6wghR9LaPU+aKK6wDINrHA5+Td6k0V4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jonjo",
+        "first_name": "John Paul",
+        "last_name": "Jones",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:22:04.267Z",
+        "position": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$4N8P5njKEPft8MDwnk8OYU$aVUGc5VQ7Hvp72mRAv0WDPKxKu1I4kZKWnK301x93eM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "bonjo",
+        "first_name": "John",
+        "last_name": "Bonham",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:22:38.348Z",
+        "position": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$jspX8GXMG6WFOfih2QflOU$LK2R473mKJ8QcAPV2UeWW5KRgIuwH+UTQw2o+85eBFk=",
+        "last_login": "2025-04-17T13:41:54.252Z",
+        "is_superuser": false,
+        "username": "hetja",
+        "first_name": "James",
+        "last_name": "Hetfield",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:23:51.083Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$0XmOg4p230lSVbrpX9qjvA$e3mBlbKPFx69qvcnklE2sos1FFkmkIcVWs0qy/ta9P4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hamki",
+        "first_name": "Kirk",
+        "last_name": "Hammett",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:24:13.957Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$grgTfCtrc1nHpQ12Xaffbz$PxkeJLFkzVd2D7qCmhvDw6ONy/KnM9nChHBYNqg6CL4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "burcl",
+        "first_name": "Cliff",
+        "last_name": "Burton",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:24:49Z",
+        "position": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$gO9vusqx2fGqtSMSxk5Jpq$Kd1RHYIII7vTcyYci1RLuWHygZEZVnz132JPSMRuXPU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ulrla",
+        "first_name": "Lars",
+        "last_name": "Ulrich",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:25:16.340Z",
+        "position": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$nzKmpHOwd238IJPTO3Vj5b$MU54h3a8wvSQqLnDDTvzXa1loBa2vVeFHF4MxZtGijk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "leege",
+        "first_name": "Geddy",
+        "last_name": "Lee",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:53:37.641Z",
+        "position": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$zOk87DMzQ740wHTDSUbtEj$xx4n4ZTlThiE4IEDbX4LF1L6n6xDWJmT6l/J5ixET+I=",
+        "last_login": "2025-04-18T10:55:25.232Z",
+        "is_superuser": false,
+        "username": "lifal",
+        "first_name": "Alex",
+        "last_name": "Lifeson",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:54:01.735Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$IIPRMDzNZZjB2H6m1x4ZEb$awz5Kyjzsq8aqxxB8N+KNFs9k8ceRhFf3Sp6UdPIOvk=",
+        "last_login": "2025-04-18T09:29:26.043Z",
+        "is_superuser": false,
+        "username": "peane",
+        "first_name": "Neil",
+        "last_name": "Peart",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T09:54:29.751Z",
+        "position": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$rwy8yVrlHGP2pFeFltpkxt$vz/NE6KnXQMj2xRGNbr/EMS16l3xfAy+jdUi6XSksMQ=",
+        "last_login": "2025-04-18T11:26:37.739Z",
+        "is_superuser": false,
+        "username": "blari",
+        "first_name": "Ritchie",
+        "last_name": "Blackmore",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T10:21:31.716Z",
+        "position": 9,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$1JaxErIkIi1inIgD3kuDH9$fGRSWPoYLOOfcxFjcQMRvh4hCLYqP2noD6XqOUhXyng=",
+        "last_login": "2025-04-18T11:26:09.608Z",
+        "is_superuser": false,
+        "username": "gilia",
+        "first_name": "Ian",
+        "last_name": "Gillan",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T10:22:37.799Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$HO0onIWpOfPMNNNvAnPZQA$7NK7LlDq6lEXEp2rsXdI2pn5hwfaLeRQQIECkLksuYo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "gloro",
+        "first_name": "Roger",
+        "last_name": "Glover",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T10:23:09.811Z",
+        "position": 10,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$k7YDrqrzDKiLULDnJec9w7$d7xe5WlSp6J+h/nfrTNNLyS6SK0FgDeF6S8HdBCcxOQ=",
+        "last_login": "2025-04-17T14:34:03.418Z",
+        "is_superuser": false,
+        "username": "lorjo",
+        "first_name": "John",
+        "last_name": "Lord",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T10:23:31.717Z",
+        "position": 13,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$y72jQ6pNQmkSOzYGIMh94p$lcRr7PqX9c/Aeoy8bD7YATMIEBzti1bk4Ah4X4i1Ulg=",
+        "last_login": "2025-04-17T13:38:30.308Z",
+        "is_superuser": false,
+        "username": "paiia",
+        "first_name": "Ian",
+        "last_name": "Paice",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T10:23:57.026Z",
+        "position": 11,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 19,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$noJKzRcA5Va0I6ffIICOtL$lvLimfL2khj/U2WCmPa6dD9bWQwXUftfKnwbhuFc6a0=",
+        "last_login": "2025-04-17T13:36:40.705Z",
+        "is_superuser": false,
+        "username": "andjo",
+        "first_name": "Jon",
+        "last_name": "Anderson",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T11:19:46.712Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 20,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$P2jCScfosOENf1JnUk8Swc$dWB/0thQwG2UW2CJl0TWaZ2TSpx0TrgAs1p7cbC9KGg=",
+        "last_login": "2025-04-18T14:22:37.244Z",
+        "is_superuser": false,
+        "username": "howst",
+        "first_name": "Steve",
+        "last_name": "Howe",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T11:22:02.589Z",
+        "position": 14,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 21,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$CkOVN9vdAcSY2qKTgIyivh$zNGVMFtSKrCH61Wm0qfNCksPm9oYMBIDtxvVW/9Esys=",
+        "last_login": "2025-04-18T14:11:43.144Z",
+        "is_superuser": false,
+        "username": "dioro",
+        "first_name": "Ronnie James",
+        "last_name": "Dio",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T13:44:03.277Z",
+        "position": 8,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 22,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$LPfAbyiXZmTJljtk8iCCQL$E317Jy/lk6OC+1xTY6e4zuESFJ/R69SUV1L6x1RFEvo=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "pagni",
+        "first_name": "Niccolo",
+        "last_name": "Paganini",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T15:09:53.379Z",
+        "position": 16,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 23,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$pKOlmcThpdcdI7xrZM76Y1$tIG4TdpqYNA2VR8Ikjwkyn0zZ0a0AtCKkMn0LzCRU2s=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "popva",
+        "first_name": "Vasyl",
+        "last_name": "Popaduik",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T15:11:16.848Z",
+        "position": 16,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.worker",
+    "pk": 24,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$nnKzO499W3FDVYg0Jt93Sh$1TIc0piO19jsdxEs++Mw+m23UpXF5lgBGPomeaTg7YY=",
+        "last_login": "2025-04-17T13:35:18.027Z",
+        "is_superuser": false,
+        "username": "andia",
+        "first_name": "Ian",
+        "last_name": "Anderson",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-17T06:15:38.294Z",
+        "position": 17,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 1,
+    "fields": {
+        "name": "Bug"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 2,
+    "fields": {
+        "name": "Defect"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 3,
+    "fields": {
+        "name": "Feature"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 4,
+    "fields": {
+        "name": "QA"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 5,
+    "fields": {
+        "name": "Documentation"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 6,
+    "fields": {
+        "name": "Music"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 7,
+    "fields": {
+        "name": "Album"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 8,
+    "fields": {
+        "name": "Song"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 9,
+    "fields": {
+        "name": "Dance"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 10,
+    "fields": {
+        "name": "Double album"
+    }
+},
+{
+    "model": "tasker.tasktype",
+    "pk": 12,
+    "fields": {
+        "name": "Sortware upgrading"
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 1,
+    "fields": {
+        "name": "Feature #1",
+        "description": "asf",
+        "created_at": "2025-04-16T09:19:58.240Z",
+        "deadline": "2025-05-07T21:00:00Z",
+        "is_completed": true,
+        "priority": "Low",
+        "task_types": [
+            3
+        ],
+        "workers": [
+            2
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 2,
+    "fields": {
+        "name": "Task # 2",
+        "description": "for project",
+        "created_at": "2025-04-16T09:28:54.471Z",
+        "deadline": "2025-04-24T21:00:00Z",
+        "is_completed": true,
+        "priority": "Low",
+        "task_types": [
+            2
+        ],
+        "workers": [
+            5
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 3,
+    "fields": {
+        "name": "Task # 3",
+        "description": "3",
+        "created_at": "2025-04-16T09:29:27.143Z",
+        "deadline": "2025-07-16T21:00:00Z",
+        "is_completed": true,
+        "priority": "Urgent",
+        "task_types": [
+            5
+        ],
+        "workers": [
+            8
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 4,
+    "fields": {
+        "name": "T 4",
+        "description": "d",
+        "created_at": "2025-04-16T09:29:47.975Z",
+        "deadline": "2025-04-10T21:00:00Z",
+        "is_completed": false,
+        "priority": "Low",
+        "task_types": [
+            3
+        ],
+        "workers": [
+            7
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 6,
+    "fields": {
+        "name": "Write 10 songs for new album (music)",
+        "description": "erf",
+        "created_at": "2025-04-16T10:36:46.711Z",
+        "deadline": "2025-04-23T21:00:00Z",
+        "is_completed": false,
+        "priority": "Urgent",
+        "task_types": [
+            8
+        ],
+        "workers": [
+            13,
+            8,
+            14
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 7,
+    "fields": {
+        "name": "90125",
+        "description": "eg",
+        "created_at": "2025-04-16T11:20:40.435Z",
+        "deadline": "2025-04-26T21:00:00Z",
+        "is_completed": true,
+        "priority": "Low",
+        "task_types": [
+            7,
+            4
+        ],
+        "workers": [
+            19
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 8,
+    "fields": {
+        "name": "QA 1",
+        "description": "weer",
+        "created_at": "2025-04-16T12:54:38.226Z",
+        "deadline": "2025-04-23T21:00:00Z",
+        "is_completed": false,
+        "priority": "Low",
+        "task_types": [
+            7,
+            4
+        ],
+        "workers": [
+            13,
+            5
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 9,
+    "fields": {
+        "name": "QA2",
+        "description": "rerg",
+        "created_at": "2025-04-16T12:55:00.737Z",
+        "deadline": "2025-04-30T21:00:00Z",
+        "is_completed": true,
+        "priority": "Low",
+        "task_types": [
+            6,
+            4,
+            8
+        ],
+        "workers": [
+            13
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 10,
+    "fields": {
+        "name": "Special task for Yes memers",
+        "description": "d",
+        "created_at": "2025-04-16T14:02:57.398Z",
+        "deadline": "2025-05-06T21:00:00Z",
+        "is_completed": true,
+        "priority": "Low",
+        "task_types": [
+            9
+        ],
+        "workers": [
+            19,
+            20
+        ]
+    }
+},
+{
+    "model": "tasker.task",
+    "pk": 11,
+    "fields": {
+        "name": "Upgrade windows to 11",
+        "description": "Upgrade windows to 11",
+        "created_at": "2025-04-18T09:30:42.343Z",
+        "deadline": "2025-05-10T21:00:00Z",
+        "is_completed": false,
+        "priority": "High",
+        "task_types": [
+            12
+        ],
+        "workers": [
+            14,
+            15,
+            7,
+            6,
+            20,
+            4,
+            10,
+            11,
+            16,
+            3,
+            22,
+            17,
+            1,
+            12,
+            2,
+            23,
+            9
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 1,
+    "fields": {
+        "name": "Led Zeppelin",
+        "description": "1969 - 1979",
+        "created_at": "2025-04-16T09:23:14.306Z",
+        "is_active": false,
+        "workers": [
+            5,
+            4,
+            3,
+            2
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 2,
+    "fields": {
+        "name": "Metallica",
+        "description": "1983 - Now",
+        "created_at": "2025-04-16T09:25:55.438Z",
+        "is_active": true,
+        "workers": [
+            8,
+            7,
+            6,
+            9
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 3,
+    "fields": {
+        "name": "Rush",
+        "description": "1973 - 2013",
+        "created_at": "2025-04-16T09:55:00.929Z",
+        "is_active": true,
+        "workers": [
+            10,
+            11,
+            12
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 4,
+    "fields": {
+        "name": "Deep Purple",
+        "description": "1968 - now",
+        "created_at": "2025-04-16T10:38:56.458Z",
+        "is_active": true,
+        "workers": [
+            13,
+            14,
+            15,
+            16,
+            17
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 5,
+    "fields": {
+        "name": "Yes",
+        "description": "1969 - now",
+        "created_at": "2025-04-16T11:21:26.818Z",
+        "is_active": false,
+        "workers": [
+            19,
+            20
+        ]
+    }
+},
+{
+    "model": "tasker.team",
+    "pk": 6,
+    "fields": {
+        "name": "Rainbow",
+        "description": "1975 - now",
+        "created_at": "2025-04-16T13:44:30.362Z",
+        "is_active": false,
+        "workers": [
+            13,
+            21
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 2,
+    "fields": {
+        "name": "Houses of the Holy",
+        "description": "1973",
+        "created_at": "2025-04-16T09:49:55.856Z",
+        "deadline": "2022-02-15T22:00:00Z",
+        "is_completed": false,
+        "tasks": [
+            1
+        ],
+        "teams": [
+            1
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 3,
+    "fields": {
+        "name": "Master of the Holy",
+        "description": "LZ + Metallica",
+        "created_at": "2025-04-16T09:57:00.705Z",
+        "deadline": "2025-05-06T21:00:00Z",
+        "is_completed": true,
+        "tasks": [
+            1,
+            3
+        ],
+        "teams": [
+            2,
+            1
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 4,
+    "fields": {
+        "name": "Hemispheres",
+        "description": "1978",
+        "created_at": "2025-04-16T09:58:22.886Z",
+        "deadline": "1978-04-18T21:00:00Z",
+        "is_completed": false,
+        "tasks": [
+            2
+        ],
+        "teams": [
+            3
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 5,
+    "fields": {
+        "name": "In Rock",
+        "description": "aspoijf 1970",
+        "created_at": "2025-04-16T10:39:49.369Z",
+        "deadline": "2025-04-03T21:00:00Z",
+        "is_completed": false,
+        "tasks": [
+            4,
+            6,
+            3
+        ],
+        "teams": [
+            4,
+            3
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 6,
+    "fields": {
+        "name": "Project 20250417",
+        "description": "rg",
+        "created_at": "2025-04-17T11:26:57.319Z",
+        "deadline": "2025-05-01T21:00:00Z",
+        "is_completed": false,
+        "tasks": [
+            9
+        ],
+        "teams": [
+            2,
+            6
+        ]
+    }
+},
+{
+    "model": "tasker.project",
+    "pk": 7,
+    "fields": {
+        "name": "I Robot",
+        "description": "Rarson",
+        "created_at": "2025-04-18T19:17:58.743Z",
+        "deadline": "2025-05-07T21:00:00Z",
+        "is_completed": false,
+        "tasks": [
+            6,
+            8
+        ],
+        "teams": [
+            3,
+            1
+        ]
+    }
+}
+]
