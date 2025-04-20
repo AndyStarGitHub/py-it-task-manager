@@ -1,7 +1,7 @@
-# py-it-task-manager
+## py-it-task-manager
 Website (portfolio project), Mate academy. 
 
-** General information **
+## General information 
 
 The purpose of the project is to arrange a project management of IT company. 
 A worker is appointed to the position. Any worker can create tasks and assign 
@@ -12,7 +12,31 @@ tasks. Project's status can be toggles similar to the task's status.
 The task of any worker (or projects of a team) are shown, not finished at
 the top.
 
-** Approach in general **
+## Installation
+
+Python3 must be already installed
+
+```shell
+git clone https://github.com/AndyStarGitHub/py-it-task-manager/
+cd py-it-task-manager
+python -m venv venv
+venv\Scripts\activate (on Windows)
+source venv/bin/activate (on macOS)
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+## Additional software requirements
+* asgiref==3.8.1
+* crispy-bootstrap4==2024.10
+* Django==5.2
+* django-crispy-forms==2.4
+* sqlparse==0.5.3
+* tzdata==2025.2**
+
+
+
+## Features
 
 1. First worker is superuser.
 2. Each worker is allowed to do all actions (no roles/restrictions so far). 
@@ -28,35 +52,15 @@ the top.
 12. Tasks / projects can be completed or not yet. Their status can be changed.
 13. At a worker page his (her) not completed and completed tasks are shown.
 
-** Software requirements **
-
-* Python 3.13 interpreter
-
-Additional software:
-* asgiref==3.8.1
-* crispy-bootstrap4==2024.10
-* Django==5.2
-* django-crispy-forms==2.4
-* sqlparse==0.5.3
-* tzdata==2025.2
-
-The following steps are to be done for installation of the additional software: 
-* To open python terminal in the project directory,
-* To run from the command line:
-    pip install -r requirements.txt
-
+## Demo
 Training database should be populated by running from the command line:
-    python manage.py loaddata it_task_manager_data.json
+python manage.py loaddata it_task_manager_data.json
 
-** Running the project **
-To run from the terminal the command:
-    python manage.py runserver
-To enter the address 127.0.0.1 in the search line of a browser.
 To login as a superuser with the credentials:
     Login: pc
     Password: 1qazcde3
 
-Further steps are according to the site interface.
+
 
 
 
