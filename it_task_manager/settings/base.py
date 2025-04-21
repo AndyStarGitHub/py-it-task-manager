@@ -20,11 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-n(m)9(m%0@r*24g^j*2nrekogoe0!8!$rkty0a0l9&(-%2shw0')
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-n(m)9(m%0@r*24g^j*2nrekogoe0!8!$rkty0a0l9&(-%2shw0'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-
 
 # Application definition
 
@@ -71,9 +72,6 @@ WSGI_APPLICATION = 'it_task_manager.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
