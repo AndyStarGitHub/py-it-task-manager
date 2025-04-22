@@ -1,3 +1,5 @@
+from enum import Enum
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
@@ -45,10 +47,24 @@ class TaskType(models.Model):
 
 
 class Task(models.Model):
+    # class Priority(models.TextChoices):
+    #     Choices = [
+    #     ("URGENT", "Urgent",),
+    #     ("HIGH", "High",),
+    #     ("LOW", "Low",)
+    #     ]
+
     class PriorityChoices(models.TextChoices):
         URGENT = "Urgent"
         HIGH = "High"
         LOW = "Low"
+    # class PriorityChoices(models.TextChoices):
+    #     choices_priority = [
+    #     "Urgent",
+    #     "High",
+    #     "Low"
+    #     ]
+
 
     name = models.CharField(max_length=63, unique=True)
     description = models.TextField()
@@ -56,10 +72,15 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     deadline = models.DateTimeField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
+    # priority = models.CharField(choices=Priority.Choices,
+    #                             max_length=6,
+    #                             default=Priority.Choices[0],
+    #                             )
     priority = models.CharField(choices=PriorityChoices,
                                 max_length=6,
                                 default=PriorityChoices.LOW
                                 )
+
     task_types = models.ManyToManyField(TaskType, related_name="tasks")
     workers = models.ManyToManyField(Worker, related_name="tasks")
 
