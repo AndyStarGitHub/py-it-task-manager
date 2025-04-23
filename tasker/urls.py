@@ -1,7 +1,7 @@
 from django.urls import path, include
 
-from .logging import user_logout
-from .views import *
+from tasker.logging import LogOutView
+from tasker.views import *
 
 
 urlpatterns = [
@@ -46,7 +46,6 @@ urlpatterns = [
          ProjectListView.as_view(),
          name="project-list"
          ),
-
     path("projects/create/",
          ProjectCreateView.as_view(),
          name="project-create"
@@ -120,7 +119,7 @@ urlpatterns = [
          name="team-toggle-done"
          ),
     path("accounts/", include("django.contrib.auth.urls")),
-    path('logout/', user_logout, name='logout_user'),
+    path('logout/', LogOutView.as_view(), name='logout_user'),
 
 ]
 
