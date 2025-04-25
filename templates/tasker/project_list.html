@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <h1>
+    Projects
+    <a style="float: right" href="{% url 'tasker:project-create' %}" class="btn btn-primary link-to-page">
+      Add
+    </a>
+  </h1>
+  <form method="get" action="" class="form-inline">
+    {{ search_form|crispy }}
+    <input class="btn btn-secondary" type="submit" value="🔍" >
+  </form>
+  {% if project_list %}
+    <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Deadline</th>
+        <th>Teams</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Status</th>
+        <th>Toggle status</th>
+      </tr>
+
+      {% for project in project_list %}
+        <tr>
+          <td>
+            {{ project.name }}
+          </td>
+          <td>
+            {{ project.deadline }}
+          </td>
+          <td>
+            {% for team in project.teams.all %}
+              {{ team.name }} /
+            {% endfor %}
+          </td>
+          <td>
+            <a class="btn btn-secondary"
+              href="{% url 'tasker:project-update' pk=project.id %}">
+              Update
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-secondary"
+              href="{% url 'tasker:project-delete' pk=project.id %}">
+              Delete
+            </a>
+          </td>
+          <td>
+            {% if project.is_completed %}
+              <label style="color:Green;"><strong>Completed</strong></label>
+            {% else %}
+              <label style="color:Red;"><strong>Not completed</strong></label>
+            {% endif %}
+          </td>
+        <td>
+            <form method="post" action="{% url 'tasker:project-toggle-done' project.id %}">
+		          {% csrf_token %}
+		          {% if project.is_completed %}
+		            <button type="submit" class="btn btn-secondary btn-sm">Uncomplete</button>
+		          {% else %}
+		            <button type="submit" class="btn btn-success btn-sm">Complete</button>
+		          {% endif %}
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no projects yet</p>
+  {% endif %}
+{% endblock %}
